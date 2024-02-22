@@ -1,0 +1,7 @@
+module.exports = {
+    NIFTY: 'NIFTY',
+    FINNIFTY: 'FINNIFTY',
+    BANKNIFTY: 'BANKNIFTY',
+    MIDCPNIFTY: 'MIDCPNIFTY',
+    SENSEX: 'SENSEX'
+};

@@ -1,5 +1,6 @@
 const express = require("express");
 const { MongoClient, ServerApiVersion } = require('mongodb');
+require('dotenv').config()
 
 const { fetchDataNSE, fetchDataBSE } = require("./helpers");
 const { NIFTY, BANKNIFTY, FINNIFTY, MIDCPNIFTY, SENSEX } = require("./constants");
@@ -7,8 +8,7 @@ const { NIFTY, BANKNIFTY, FINNIFTY, MIDCPNIFTY, SENSEX } = require("./constants"
 const app = express();
 const port = process.env.PORT || 3001;
 
-const DB_USER = "imdr_user";
-const DB_PASSWORD = "6QijXevv0qDmZvoI";
+const {DB_USER, DB_PASSWORD} = process.env;
 
 const DB_URI = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@cluster0.lwkimnl.mongodb.net/?retryWrites=true&w=majority`;
 

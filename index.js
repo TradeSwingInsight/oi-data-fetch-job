@@ -32,6 +32,8 @@ app.get("/nse/:indexName", async (req, res) => {
         }
 
         res.type('html').send(html);
+    } catch (error) {
+        console.log(error);
     } finally {
         await client.close();
     }
@@ -45,6 +47,8 @@ app.get("/bse/sensex", async (req, res) => {
             await fetchDataBSE(SENSEX, req.query.expiryDate, client);
 
         res.type('html').send(html);
+    } catch (error) {
+        console.log(error);
     } finally {
         await client.close();
     }
